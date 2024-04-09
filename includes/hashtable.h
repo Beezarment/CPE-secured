@@ -20,21 +20,21 @@ typedef struct hashtable_s {
     hash_entry_t **table;
 } hashtable_t;
 
+int my_put_nbr(int nb);
+void my_putchar(char c);
 int hash(char *key, int len);
-hashtable_t *new_hashtable(int (*hash)(char *, int), int len);
+char *my_getnbr_str(int num);
+void ht_dump(hashtable_t *ht);
+int show_list(hashtable_t *ht);
+int my_strlen(char const *str);
+int my_putstr(char const *str);
+char *my_strdup(const char *str);
 void delete_hashtable(hashtable_t *ht);
-int ht_insert(hashtable_t *ht, char *key, char *value);
 int ht_delete(hashtable_t *ht, char *key);
 char *ht_search(hashtable_t *ht, char *key);
-void ht_dump(hashtable_t *ht);
-int my_put_nbr(int nb);
-int my_strlen(char const *str);
-void my_putchar(char c);
-int my_putstr(char const *str);
-int my_strcmp(const char *s1, const char *s2);
-char *my_strdup(const char *str);
 char *my_strcpy(char *dest, char const *src);
-char *my_getnbr_str(int num);
-int show_list(hashtable_t *ht);
+int my_strcmp(const char *s1, const char *s2);
+int ht_insert(hashtable_t *ht, char *key, char *value);
+hashtable_t *new_hashtable(int (*hash)(char *, int), int len);
 
 #endif
